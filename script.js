@@ -22,13 +22,6 @@ function showprompt() {
       alert("Invalid password length. Please enter a number between 8 and 128.");
     } else {
 }
-}
-
-var length = parseInt(prompt("Enter the desired length of the password (between 8 and 128 characters):"));
-if (isNaN(length) || length < 8 || length > 128) {
-  alert("Invalid password length. Please enter a number between 8 and 128.");
-} else {
- 
   var includeLowercase = confirm("Include lowercase letters?");
   var includeUppercase = confirm("Include uppercase letters?");
   var includeNumbers = confirm("Include numbers?");
