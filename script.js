@@ -13,10 +13,10 @@
 
 // }
 
-const generateBtn = document.getElementById(generate);
-generateBtn.addEventListener("click", writePassword);
+const generateBtn = document.getElementById("generate");
+generateBtn.addEventListener("click", showprompt);
 
-function writepassword() {
+function showprompt() {
     var length = parseInt(prompt("Enter the desired length of the password (between 8 and 128 characters):"));
     if (isNaN(length) || length < 8 || length > 128) {
       alert("Invalid password length. Please enter a number between 8 and 128.");
