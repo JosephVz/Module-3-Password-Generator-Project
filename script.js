@@ -1,31 +1,17 @@
-// // Assignment code here
-
-
-// // Get references to the #generate element
-// var generateBtn = document.querySelector("#generate");
-
-// // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
 const generateBtn = document.getElementById("generate");
 generateBtn.addEventListener("click", showprompt);
 
 function showprompt() {
     var length = parseInt(prompt("Enter the desired length of the password (between 8 and 128 characters):"));
-    if (isNaN(length) || length < 8 || length > 128) {
+    if (length < 8 || length > 128) {
       alert("Invalid password length. Please enter a number between 8 and 128.");
+      return;
     } else {
-}
-  var includeLowercase = confirm("Include lowercase letters?");
-  var includeUppercase = confirm("Include uppercase letters?");
-  var includeNumbers = confirm("Include numbers?");
-  var includeSpecialChars = confirm("Include special characters?");
+  }
+  var includeLowercase = confirm("Would you like to include lowercase letters?");
+  var includeUppercase = confirm("Would you like to include uppercase letters?");
+  var includeNumbers = confirm("Would you like to include numbers?");
+  var includeSpecialChars = confirm("Would you like to include special characters?");
 
 
   var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
@@ -53,5 +39,6 @@ function showprompt() {
     password += charSet[randomIndex];
   }
 
-  alert("Your generated password is: " + password);
+  // alert("Your generated password is: " + password);
+  document.querySelector("#password").textContent = password;
 }
